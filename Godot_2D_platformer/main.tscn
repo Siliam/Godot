@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwj01vembxfp6"]
+[gd_scene load_steps=3 format=3 uid="uid://dwj01vembxfp6"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_onvsu"]
+[ext_resource type="PackedScene" uid="uid://mw5trpud16y3" path="res://bg.tscn" id="2_d31qe"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_onvsu")
@@ -24,6 +25,8 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 48
 text = "Quit"
+
+[node name="BG" parent="." instance=ExtResource("2_d31qe")]
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
