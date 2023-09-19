@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5pfamwsjha58"]
+[gd_scene load_steps=11 format=3 uid="uid://c5pfamwsjha58"]
 
 [ext_resource type="PackedScene" uid="uid://civsd63hkqhxk" path="res://player/player.tscn" id="1_3gd5v"]
 [ext_resource type="Texture2D" uid="uid://bsblh4evmcuv7" path="res://assets/Sunny-land-files/Sunny-land-assets-files/PNG/environment/layers/tileset.png" id="1_7uwop"]
+[ext_resource type="Script" path="res://world.gd" id="1_odduw"]
 [ext_resource type="Script" path="res://bg.gd" id="2_qm30s"]
 [ext_resource type="Texture2D" uid="uid://gn4yb2an6sxx" path="res://assets/Sunny-land-files/Sunny-land-assets-files/PNG/environment/layers/back.png" id="3_1ko3p"]
 [ext_resource type="Texture2D" uid="uid://bybew65isb1ko" path="res://assets/Sunny-land-files/Sunny-land-assets-files/PNG/environment/layers/middle.png" id="4_n22wc"]
 [ext_resource type="PackedScene" uid="uid://03bfppwjdiyt" path="res://frog.tscn" id="6_0kgmj"]
+[ext_resource type="Script" path="res://Label.gd" id="7_i7ke4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt35d"]
 texture = ExtResource("1_7uwop")
@@ -414,6 +416,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tt35d")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_odduw")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_22b25")
@@ -471,4 +474,33 @@ position = Vector2(496, 184)
 [node name="Mobs" type="Node2D" parent="."]
 
 [node name="Frog" parent="Mobs" instance=ExtResource("6_0kgmj")]
-position = Vector2(448, 232)
+position = Vector2(232, 501)
+
+[node name="Frog2" parent="Mobs" instance=ExtResource("6_0kgmj")]
+position = Vector2(88, 464)
+
+[node name="Frog3" parent="Mobs" instance=ExtResource("6_0kgmj")]
+position = Vector2(400, 208)
+
+[node name="Frog4" parent="Mobs" instance=ExtResource("6_0kgmj")]
+position = Vector2(760, 392)
+
+[node name="Frog5" parent="Mobs" instance=ExtResource("6_0kgmj")]
+position = Vector2(888, 504)
+
+[node name="Frog6" parent="Mobs" instance=ExtResource("6_0kgmj")]
+position = Vector2(1008, 472)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UI"]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 100.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0.443137, 0.843137, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 25
+text = "HP: 10"
+script = ExtResource("7_i7ke4")
