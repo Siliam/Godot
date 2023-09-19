@@ -1,13 +1,11 @@
 extends CharacterBody2D
 
-var health = 10
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node('AnimationPlayer') 
-
 
 	
 func _physics_process(delta):
@@ -42,7 +40,9 @@ func _physics_process(delta):
 		anim.play("Fall")
 	move_and_slide()
 
-	if self.health <= 0:
+	if Game.playerHP <= 0:
 		self.queue_free()
+		Game.playerHP = 10
+		Game.Gold = 0
 		get_tree().change_scene_to_file("res://main.tscn")
 		
