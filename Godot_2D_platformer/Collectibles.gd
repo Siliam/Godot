@@ -8,7 +8,7 @@ func _on_timer_timeout():
 		last_cherry.fade_up()
 	
 	var cherryTemp = Cherry.instantiate()
-	var rand_x = randi_range(50, 500)
+	var rand_x = randi_range(50, 2300)
 	
 	cherryTemp.position = Vector2(rand_x, 500)
 	add_child(cherryTemp)
