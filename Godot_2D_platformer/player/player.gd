@@ -6,11 +6,11 @@ const JUMP_VELOCITY = -500.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = get_node('AnimationPlayer') 
-
+var fallen = false
 	
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	if not is_on_floor() and not fallen:
 		velocity.y += gravity * delta
 
 	# Handle Jump.
@@ -40,10 +40,13 @@ func _physics_process(delta):
 		anim.play("Fall")
 	move_and_slide()
 
-	if Game.playerHP > 0 and position.y > 675:
+	if Game.playerHP > 0 and position.y > 650 and not fallen:
+		velocity = Vector2(0, 0)
+		fallen = true
 		get_node("FallSound").play()
-		# await get_tree().create_timer(2).timeout
-		self.position = Vector2(position.x-100, 300)
+		await get_node("FallSound").finished
+		self.position = Vector2(position.x-100, 310)
+		fallen = false
 
 	if Game.playerHP <= 0:
 		self.queue_free()
@@ -54,5 +57,7 @@ func _physics_process(delta):
 		
 
 func respawn():
-	pass
-	# blink
+	get_node("FallSound").play()
+	await get_tree().create_timer(2).timeout
+	self.position = Vector2(position.x-100, 300)
+	fallen = false
