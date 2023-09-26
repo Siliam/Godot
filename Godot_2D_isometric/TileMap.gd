@@ -3,6 +3,7 @@ extends TileMap
 var GridSize = 10
 var Dic = {}
 var prev_tile = null
+var currently_selected_tile = null
 
 #0, 0
 #4, -9
@@ -29,6 +30,17 @@ func _process(delta):
 	if Dic.has(str(tile)) == false:
 		if prev_tile != null:
 			erase_cell(1, prev_tile)
+			
+	if Input.is_action_pressed("left_click"):
+		if Dic.has(str(tile)):
+			if currently_selected_tile != null:
+				erase_cell(2, currently_selected_tile)
+			currently_selected_tile = tile
+			set_cell(2, tile, 0, Vector2i(2, 14), 0)
+	
+	if Input.is_action_pressed("right_click"):
+		if Dic.has(str(tile)) and currently_selected_tile != null:
+			erase_cell(2, currently_selected_tile)
 	
 #	for x in GridSize:
 #		for y in GridSize:
