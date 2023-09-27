@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch3vjp2ug4ud8"]
+[gd_scene load_steps=11 format=3 uid="uid://ch3vjp2ug4ud8"]
 
 [ext_resource type="Texture2D" uid="uid://crgtlibrkntjx" path="res://Assets/MCBlocksColorOutline.png" id="1_dhove"]
 [ext_resource type="Texture2D" uid="uid://c68567fo41d5n" path="res://Assets/MCBlocksBlackOutline.png" id="2_lgjkg"]
 [ext_resource type="Texture2D" uid="uid://dcxq2mqxo1j4c" path="res://Assets/chess_pieces.png" id="3_kehgr"]
 [ext_resource type="Script" path="res://TileMap.gd" id="4_e4fhb"]
+[ext_resource type="PackedScene" uid="uid://bydo6cvi1cb88" path="res://piece.tscn" id="5_gtcpc"]
+[ext_resource type="Script" path="res://Pieces.gd" id="6_p13l1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqg4k"]
 texture = ExtResource("1_dhove")
@@ -1752,9 +1754,14 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = true
 layer_3/y_sort_origin = 3
 layer_3/z_index = 3
-layer_3/tile_data = PackedInt32Array(-327684, 2, 0, -393220, 2, 0, -458755, 2, 0, -524291, 2, 0, -458754, 2, 0, -393218, 2, 0, -655360, 393218, 0, -786433, 262146, 0, -851968, 131074, 0, -327680, 2, 0, -262143, 2, 0, -196607, 65538, 0, -458749, 589826, 0, -327677, 589826, 0, 131074, 851970, 0, -65533, 983042, 0, -327676, 655362, 0, 262145, 655362, 0, -196606, 524290, 0, -131070, 524290, 0, -65535, 524290, 0, 1, 524290, 0)
+layer_3/tile_data = PackedInt32Array()
 script = ExtResource("4_e4fhb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(40, -29)
 zoom = Vector2(3, 3)
+
+[node name="Piece" parent="." instance=ExtResource("5_gtcpc")]
+
+[node name="Pieces" type="Node2D" parent="."]
+script = ExtResource("6_p13l1")

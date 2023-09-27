@@ -11,12 +11,17 @@ var currently_selected_tile = null
 #4, 9
 
 func _ready():
+	var Pieces = get_node("../Pieces")
+	var non_empty = []
 	for x in range(-5, 7):
 		for y in range(-17, 7):
 			var floor_cell = get_cell_tile_data(0, Vector2i(x, y))
 			if floor_cell != null:
 				Dic[str(Vector2(x, y))] = {"Type": "Empty",}
+				if randf() < 0.2:
+					non_empty.append(map_to_local(Vector2i(x, y)))
 	
+	Pieces.instantiate_pieces(non_empty)
 
 func _process(delta):
 	var tile = local_to_map(get_global_mouse_position())
