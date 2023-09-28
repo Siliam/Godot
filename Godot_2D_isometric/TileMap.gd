@@ -5,11 +5,6 @@ var Dic = {}
 var prev_tile = null
 var currently_selected_tile = null
 
-#0, 0
-#4, -9
-#9, 0
-#4, 9
-
 func _ready():
 	var Pieces = get_node("../Pieces")
 	var non_empty = []
@@ -18,7 +13,7 @@ func _ready():
 			var floor_cell = get_cell_tile_data(0, Vector2i(x, y))
 			if floor_cell != null:
 				Dic[str(Vector2(x, y))] = {"Type": "Empty",}
-				if randf() < 0.2:
+				if randf() < 0.1:
 					non_empty.append(map_to_local(Vector2i(x, y)))
 	
 	Pieces.instantiate_pieces(non_empty)
