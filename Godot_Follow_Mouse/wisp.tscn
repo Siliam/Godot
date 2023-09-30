@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://bema0s1xi3t5w"]
+
+[ext_resource type="Texture2D" uid="uid://cgc4x00wrus1k" path="res://Flame.png" id="1_oo6mj"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_iubip"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_cahe5"]
+offsets = PackedFloat32Array(0, 0.10596, 0.231788, 0.357616, 0.483444, 0.602649, 0.781457, 0.89404, 1)
+colors = PackedColorArray(0.447059, 0.309804, 0.658824, 0, 0.446466, 0.310557, 0.657392, 1, 0.573392, 0.706289, 0.210337, 1, 0.566651, 0.423516, 0.553338, 1, 0.701699, 0.148805, 0.278466, 1, 0.310665, 0.653405, 0.853424, 1, 0.593029, 0.63919, 0.697999, 1, 0.282353, 0.678431, 0.886275, 0.533333, 0.282353, 0.678431, 0.886275, 0)
+
+[node name="Wisp" type="CPUParticles2D"]
+material = SubResource("CanvasItemMaterial_iubip")
+position = Vector2(-6, 1)
+amount = 7
+explosiveness = 0.61
+local_coords = true
+texture = ExtResource("1_oo6mj")
+direction = Vector2(0, -1)
+spread = 2.34
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.45
+initial_velocity_max = 340.91
+angular_velocity_min = -436.36
+angular_velocity_max = 509.09
+orbit_velocity_min = -676.67
+orbit_velocity_max = 535.45
+linear_accel_min = -40.4
+linear_accel_max = -9.42
+damping_min = 16.162
+damping_max = 71.718
+angle_min = -160.0
+angle_max = -101.8
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_cahe5")
+hue_variation_min = -0.87
+hue_variation_max = 1.0
+anim_speed_max = 67.03

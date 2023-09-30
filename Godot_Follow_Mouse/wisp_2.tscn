@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://canlq8qp13l3l"]
+
+[ext_resource type="Texture2D" uid="uid://cgc4x00wrus1k" path="res://Flame.png" id="1_thajy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d6x6x"]
+blend_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_cahe5"]
+offsets = PackedFloat32Array(0, 0.10596, 0.231788, 0.357616, 0.483444, 0.602649, 0.781457, 0.89404, 1)
+colors = PackedColorArray(0.447059, 0.309804, 0.658824, 0, 0.446466, 0.310557, 0.657392, 1, 0.573392, 0.706289, 0.210337, 1, 0.566651, 0.423516, 0.553338, 1, 0.701699, 0.148805, 0.278466, 1, 0.310665, 0.653405, 0.853424, 1, 0.593029, 0.63919, 0.697999, 1, 0.282353, 0.678431, 0.886275, 0.533333, 0.282353, 0.678431, 0.886275, 0)
+
+[node name="Wisp2" type="CPUParticles2D"]
+material = SubResource("CanvasItemMaterial_d6x6x")
+position = Vector2(1, 2)
+amount = 5
+speed_scale = 0.5
+lifetime_randomness = 0.77
+fixed_fps = 60
+local_coords = true
+texture = ExtResource("1_thajy")
+direction = Vector2(0, 0)
+spread = 0.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -40.0
+angular_velocity_max = 40.0
+orbit_velocity_min = -504.44
+orbit_velocity_max = 524.65
+damping_max = 71.718
+angle_min = -160.0
+angle_max = -101.8
+scale_amount_min = 0.0
+scale_amount_max = 0.4
+color_ramp = SubResource("Gradient_cahe5")
+hue_variation_min = -0.71
+hue_variation_max = 1.0
+anim_speed_min = 1.05
+anim_speed_max = 36.2
