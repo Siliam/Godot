@@ -24,13 +24,19 @@ func read_input():
 		velocity.x += 1
 		direction = Vector2(1, 0)
 		$AnimatedSprite2D.play("right")
-	velocity = velocity.normalized()
+		
+	velocity = velocity.normalized() * SPEED
 	
 	if velocity == Vector2.ZERO:
 		var current_animation = $AnimatedSprite2D.animation
 		if current_animation in ["up", "down", "left", "right"]:
 			$AnimatedSprite2D.play("idle_" + current_animation)
 	
+	
+	move_and_slide()
+	
 func _physics_process(delta):
 	read_input()
-	position += velocity * delta * SPEED
+
+	position += velocity * delta
+	
