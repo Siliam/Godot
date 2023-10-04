@@ -1,7 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://bydo6cvi1cb88"]
+[gd_scene load_steps=22 format=3 uid="uid://bydo6cvi1cb88"]
 
 [ext_resource type="Texture2D" uid="uid://dcxq2mqxo1j4c" path="res://Assets/chess_pieces.png" id="1_6i8t3"]
 [ext_resource type="Script" path="res://piece_character.gd" id="1_iyel5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbq8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uv2jy"]
 size = Vector2(13, 30)
@@ -206,6 +208,7 @@ animations = [{
 }]
 
 [node name="Piece" type="CharacterBody2D"]
+material = SubResource("ShaderMaterial_nbq8y")
 script = ExtResource("1_iyel5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
