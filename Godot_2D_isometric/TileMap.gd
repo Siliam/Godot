@@ -42,8 +42,7 @@ func _process(delta):
 			
 			if Dic[str(tile)]["Contains"] == "Piece":
 				print('Clicking' + str(tile))
-				Dic[str(tile)]["Contains"] = "Empty"
-				Dic[str(tile)]["Piece"].position.y += 10
+				#Dic[str(tile)]["Piece"].material.
 	
 	if Input.is_action_pressed("right_click"):
 		if Dic.has(str(tile)) and currently_selected_tile != null:
