@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfh7i8x27chnj"]
+
+[ext_resource type="PackedScene" uid="uid://bema0s1xi3t5w" path="res://wisp.tscn" id="1_s36hl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64c56"]
+radius = 66.0303
+
+[node name="Wisp" type="Area2D"]
+position = Vector2(-111.01, -87)
+
+[node name="Particle" parent="." instance=ExtResource("1_s36hl")]
+position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_64c56")

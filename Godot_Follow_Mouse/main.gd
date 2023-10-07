@@ -1,6 +1,6 @@
 extends Node2D
 
-var Wisp2 = preload("res://wisp_2.tscn")
+var Wisp2 = preload("res://wisp_new.tscn")
 var all_wisps = []
 var score = 0 
 
@@ -19,15 +19,17 @@ func spawn_randow_mini_wisp():
 	var screen_size = get_viewport_rect().size
 	var new_wisp = Wisp2.instantiate()
 	new_wisp.name = "Wisp_" + str(len(all_wisps))
+	new_wisp.scale = Vector2(0.5, 0.5)
 	all_wisps.append(new_wisp)
 	new_wisp.position.x = randi_range(0, screen_size.x)
 	new_wisp.position.y = randi_range(0, screen_size.y)
 	
 	add_child(new_wisp)
 
+
 func _on_wisp_area_entered(area):
 	print('Collision!')
 	if self.name != "Wisp":
 		area.queue_free() 
 		score += 1
-		print('New score')
+		$Score_label.text = "Score: " + str(score)

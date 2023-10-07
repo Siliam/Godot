@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd2jhj8bobh4o"]
+[gd_scene load_steps=3 format=3 uid="uid://bd2jhj8bobh4o"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_h5r4l"]
-[ext_resource type="PackedScene" uid="uid://bema0s1xi3t5w" path="res://wisp.tscn" id="3_1wb8m"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_64c56"]
-radius = 66.0303
+[ext_resource type="PackedScene" uid="uid://dfh7i8x27chnj" path="res://wisp_new.tscn" id="2_igimh"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_h5r4l")
@@ -12,20 +9,13 @@ script = ExtResource("1_h5r4l")
 [node name="ParticleSpawnTimer" type="Timer" parent="."]
 autostart = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Score_label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 43
 text = "Score: "
 
-[node name="Wisp" type="Area2D" parent="."]
-position = Vector2(-112, -87)
-
-[node name="Particle" parent="Wisp" instance=ExtResource("3_1wb8m")]
-position = Vector2(0, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wisp"]
-shape = SubResource("CircleShape2D_64c56")
+[node name="Wisp" parent="." instance=ExtResource("2_igimh")]
 
 [connection signal="timeout" from="ParticleSpawnTimer" to="." method="_on_particle_spawn_timer_timeout"]
 [connection signal="area_entered" from="Wisp" to="." method="_on_wisp_area_entered"]
