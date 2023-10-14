@@ -16,4 +16,8 @@ func _init(s, v):
 	texture_normal = face
 
 func _ready():
-	pass # Replace with function body.
+	set_ignore_texture_size(true)
+	size_flags_horizontal = Control.SIZE_EXPAND + Control.SIZE_FILL 
+	size_flags_vertical = Control.SIZE_EXPAND + Control.SIZE_FILL
+	stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+	
