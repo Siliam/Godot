@@ -1,6 +1,6 @@
 extends Node
 
-var cardBack = preload("res://assets/cards/cardBack_blue2.png")
+var cardBack = preload("res://assets/cards/cardBack_red2.png")
 
 @onready var Game = get_node("/root/Game/")
 

@@ -13,7 +13,7 @@ func _init(s, v):
 	face = load("res://assets/cards/card-"+str(suit)+"-"+str(value)+".png")
 	back = GameManager.cardBack
 	
-	texture_normal = face
+	texture_normal = back
 
 func _ready():
 	set_ignore_texture_size(true)
@@ -21,3 +21,11 @@ func _ready():
 	size_flags_vertical = Control.SIZE_EXPAND + Control.SIZE_FILL
 	stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	
+func _pressed():
+	flip()
+
+func flip():
+	if texture_normal == back:
+		texture_normal = face
+	else:
+		texture_normal = back
