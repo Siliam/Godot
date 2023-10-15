@@ -22,7 +22,7 @@ func _ready():
 	stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 	
 func _pressed():
-	flip()
+	GameManager.choose_card(self)
 
 func flip():
 	if texture_normal == back:
