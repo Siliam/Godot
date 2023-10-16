@@ -1,15 +1,19 @@
 extends Node
 
-var cardBack = preload("res://assets/cards/cardBack_red2.png")
-
 @onready var Game = get_node("/root/Game/")
 
+
 var deck = Array()
+var cardBack = preload("res://assets/cards/cardBack_red2.png")
+
 var card1 = null
 var card2 = null
 
 var match_timer = Timer.new()
 var flip_timer = Timer.new()
+
+var score = 0
+var score_label = 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +37,7 @@ func fill_deck():
 			deck.append(Card.new(suit, value))
 
 func deal_deck():
+	deck.shuffle()
 	for card in deck:
 		Game.get_node('grid').add_child(card)
 
@@ -59,6 +64,7 @@ func check_cards():
 		flip_timer.start(0.7)
 
 func match_cards_and_score():
+	score += 1
 	card1.modulate = Color(0.6, 0.6, 0.6, 0.5)
 	card2.modulate = Color(0.6, 0.6, 0.6, 0.5)
 	card1 = null
