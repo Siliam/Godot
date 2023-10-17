@@ -39,3 +39,31 @@ text = "Score"
 layout_mode = 2
 theme_override_font_sizes/font_size = 56
 text = "##"
+
+[node name="Section_Moves" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="Panel/Sections/Section_Moves"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Moves"
+
+[node name="Score" type="Label" parent="Panel/Sections/Section_Moves"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "##"
+
+[node name="Section_Timer" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="Panel/Sections/Section_Timer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Timer"
+
+[node name="Score" type="Label" parent="Panel/Sections/Section_Timer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "##"
