@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://d26bctic44133"]
+[gd_scene load_steps=5 format=3 uid="uid://d26bctic44133"]
+
+[ext_resource type="Theme" uid="uid://b7gn2b3ltafao" path="res://theme.tres" id="1_lwbjm"]
+[ext_resource type="FontFile" uid="uid://brrkifnpb4l4k" path="res://assets/fonts/Nunito-Regular.ttf" id="1_tjftm"]
+[ext_resource type="Texture2D" uid="uid://cq454ecvay0p5" path="res://assets/ui/pause.png" id="2_kmsft"]
+[ext_resource type="Texture2D" uid="uid://j4xwkpvavw3d" path="res://assets/ui/play.png" id="3_huklm"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3
@@ -7,13 +12,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_lwbjm")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 580.0
+offset_top = 540.0
 offset_bottom = -56.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -32,38 +39,70 @@ size_flags_horizontal = 3
 
 [node name="ScoreLabel" type="Label" parent="Panel/Sections/Section_Score"]
 layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_tjftm")
 theme_override_font_sizes/font_size = 56
 text = "Score"
+horizontal_alignment = 1
 
 [node name="Score" type="Label" parent="Panel/Sections/Section_Score"]
 layout_mode = 2
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 56
 text = "##"
+horizontal_alignment = 1
 
 [node name="Section_Moves" type="VBoxContainer" parent="Panel/Sections"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreLabel" type="Label" parent="Panel/Sections/Section_Moves"]
+[node name="MoveLabel" type="Label" parent="Panel/Sections/Section_Moves"]
 layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_tjftm")
 theme_override_font_sizes/font_size = 56
 text = "Moves"
+horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Panel/Sections/Section_Moves"]
+[node name="Moves" type="Label" parent="Panel/Sections/Section_Moves"]
 layout_mode = 2
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 56
 text = "##"
+horizontal_alignment = 1
 
 [node name="Section_Timer" type="VBoxContainer" parent="Panel/Sections"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ScoreLabel" type="Label" parent="Panel/Sections/Section_Timer"]
+[node name="TimerLabel" type="Label" parent="Panel/Sections/Section_Timer"]
 layout_mode = 2
+size_flags_vertical = 6
+theme_override_fonts/font = ExtResource("1_tjftm")
 theme_override_font_sizes/font_size = 56
 text = "Timer"
+horizontal_alignment = 1
 
-[node name="Score" type="Label" parent="Panel/Sections/Section_Timer"]
+[node name="Timer" type="Label" parent="Panel/Sections/Section_Timer"]
 layout_mode = 2
+size_flags_vertical = 6
 theme_override_font_sizes/font_size = 56
 text = "##"
+horizontal_alignment = 1
+
+[node name="Section_Timer2" type="VBoxContainer" parent="Panel/Sections"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.57
+
+[node name="TextureButton" type="TextureButton" parent="Panel/Sections/Section_Timer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_kmsft")
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="Panel/Sections/Section_Timer2"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("3_huklm")
+stretch_mode = 5
