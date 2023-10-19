@@ -2,7 +2,6 @@ extends Node
 
 @onready var Game = get_node("/root/Game/")
 
-
 var deck = Array()
 var cardBack = preload("res://assets/cards/cardBack_red2.png")
 
@@ -13,7 +12,6 @@ var match_timer = Timer.new()
 var flip_timer = Timer.new()
 
 var score = 0
-var score_label = 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
