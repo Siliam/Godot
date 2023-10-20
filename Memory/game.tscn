@@ -36,3 +36,5 @@ columns = 13
 
 [node name="HUD" parent="." instance=ExtResource("2_to25l")]
 layout_mode = 1
+
+[editable path="HUD"]
