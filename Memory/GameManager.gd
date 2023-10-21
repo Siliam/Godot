@@ -45,6 +45,8 @@ func reset_game():
 	timer_label.text = "0"
 	moves_label.text = "0"
 	
+	seconds_timer.start()
+	
 	fill_deck()
 	deal_deck()
 
@@ -105,6 +107,14 @@ func check_cards():
 	else:
 		flip_timer.start(0.7)
 
+func turn_over_cards():
+	card1.flip()
+	card2.flip()
+	card1.disabled = false
+	card2.disabled = false
+	card1 = null
+	card2 = null
+
 func match_cards_and_score():
 	score += 1
 	score_label.text = str(score)
@@ -113,11 +123,8 @@ func match_cards_and_score():
 	card2.modulate = Color(0.6, 0.6, 0.6, 0.5)
 	card1 = null
 	card2 = null
-
-func turn_over_cards():
-	card1.flip()
-	card2.flip()
-	card1.disabled = false
-	card2.disabled = false
-	card1 = null
-	card2 = null
+	
+	if score == 1:
+		var win_screen = PopUp.instantiate()
+		win_screen.win()
+		Game.add_child(win_screen)
