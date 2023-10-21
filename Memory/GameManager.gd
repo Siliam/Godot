@@ -2,6 +2,8 @@ extends Node
 
 @onready var Game = get_node("/root/Game/")
 
+var PopUp = preload("res://pop_up.tscn")
+
 var deck = Array()
 var cardBack = preload("res://assets/cards/cardBack_red2.png")
 
@@ -26,6 +28,9 @@ func _ready():
 	deal_deck()
 	set_up_timers()
 	setupHUD()
+	
+	var splash = PopUp.instantiate()
+	Game.add_child(splash)
 
 func reset_game():
 	for c in deck:

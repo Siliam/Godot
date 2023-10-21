@@ -5,7 +5,6 @@ func _on_pressed():
 		get_tree().paused = false
 		texture_normal = load("res://assets/ui/pause.png")
 	else:
-		get_tree().paused
 		get_tree().paused = true
 		texture_normal = load("res://assets/ui/play.png")
 

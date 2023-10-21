@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://xddd8dkddggd"]
+[gd_scene load_steps=4 format=3 uid="uid://xddd8dkddggd"]
 
 [ext_resource type="Theme" uid="uid://b7gn2b3ltafao" path="res://theme.tres" id="1_edub0"]
+[ext_resource type="Script" path="res://pop_up.gd" id="1_wo5v0"]
 [ext_resource type="Texture2D" uid="uid://h2nuglm7aais" path="res://assets/ui/title.png" id="2_2t80c"]
 
 [node name="PopUp" type="Control"]
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wo5v0")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -56,6 +58,7 @@ text = "Flip over matching cards to earn a point! Find 26 pairs to win!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+process_mode = 3
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_font_sizes/font_size = 52
