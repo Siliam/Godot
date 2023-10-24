@@ -3,6 +3,7 @@ extends CharacterBody2D
 var speed = 300
 var bullet_speed = 2000
 var direction
+var shots_fired = 0
 
 var Bullet = preload("res://bullet.tscn")
 
@@ -40,11 +41,21 @@ func _physics_process(delta):
 	position += velocity * delta
 
 func fire():
+	shots_fired += 1
 	var bullet_instance = Bullet.instantiate()
+	bullet_instance.name = "Bullet_"+str(shots_fired)
 	bullet_instance.position = get_global_position()
 	bullet_instance.rotation_degrees = self.rotation_degrees
 	
 	bullet_instance.linear_velocity = Vector2(bullet_speed,0).rotated(rotation)
 
-	
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
+
+
+func kill():
+	get_tree().reload_current_scene()
+
+
+func _on_area_2d_body_entered(body):
+	if 'Enemy' in body.name:
+		kill()
