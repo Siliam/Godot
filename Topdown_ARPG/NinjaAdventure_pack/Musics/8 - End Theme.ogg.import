@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crmefd8i1ghcc"
+path="res://.godot/imported/8 - End Theme.ogg-26a57bf2ff75952ae7b43d57d1bf73bc.oggvorbisstr"
+
+[deps]
+
+source_file="res://NinjaAdventure_pack/Musics/8 - End Theme.ogg"
+dest_files=["res://.godot/imported/8 - End Theme.ogg-26a57bf2ff75952ae7b43d57d1bf73bc.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

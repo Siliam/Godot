@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dukfkudvr3hnr"]
+[gd_scene load_steps=7 format=3 uid="uid://dukfkudvr3hnr"]
 
 [ext_resource type="Texture2D" uid="uid://c3ewbmoiqvotf" path="res://assets/square.png" id="1_hn3sp"]
 [ext_resource type="Script" path="res://Player.gd" id="1_q78wk"]
 [ext_resource type="PackedScene" uid="uid://ip3madgdtoe8" path="res://enemy.tscn" id="3_brxuf"]
+[ext_resource type="PackedScene" uid="uid://b63gi10cktbt5" path="res://wall.res" id="4_2x0oh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rr828"]
 size = Vector2(16, 16)
@@ -29,5 +30,12 @@ shape = SubResource("RectangleShape2D_0wvk8")
 
 [node name="Enemy" parent="." instance=ExtResource("3_brxuf")]
 position = Vector2(1043, 62)
+
+[node name="Wall" parent="." instance=ExtResource("4_2x0oh")]
+position = Vector2(133, 100)
+scale = Vector2(-135.695, 90.4627)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
 
 [connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_area_2d_body_entered"]
