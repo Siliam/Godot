@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7c0xd0oerjad"
-path="res://.godot/imported/SpriteSheet16x16.png-dffc050f117a989dfd59fc79588372ec.ctex"
+uid="uid://cnr41b6741vbo"
+path="res://.godot/imported/SpriteSheet16x16.png-97a8418684b4e62e819fb6e967459251.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://NinjaAdventure_pack/Backgrounds/Animated/Flower/SpriteSheet16x16.png"
-dest_files=["res://.godot/imported/SpriteSheet16x16.png-dffc050f117a989dfd59fc79588372ec.ctex"]
+source_file="res://Assets/SpriteSheet16x16.png"
+dest_files=["res://.godot/imported/SpriteSheet16x16.png-97a8418684b4e62e819fb6e967459251.ctex"]
 
 [params]
 
