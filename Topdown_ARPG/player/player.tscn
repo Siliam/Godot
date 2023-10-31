@@ -110,6 +110,7 @@ script = ExtResource("1_5arul")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
 texture = ExtResource("1_y3ike")
+offset = Vector2(0, -8)
 hframes = 4
 vframes = 7
 frame = 4
@@ -120,5 +121,5 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_krfef")
