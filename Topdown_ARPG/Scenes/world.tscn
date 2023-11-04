@@ -2867,8 +2867,19 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
-[node name="Enemy" parent="TileMap" instance=ExtResource("6_8ikdd")]
+[node name="Enemy" parent="TileMap" node_paths=PackedStringArray("end_point") instance=ExtResource("6_8ikdd")]
 position = Vector2(104, 72)
+end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemy"]
+position = Vector2(-28, 38)
+
+[node name="Enemy2" parent="TileMap" node_paths=PackedStringArray("end_point") instance=ExtResource("6_8ikdd")]
+position = Vector2(176, 101)
+end_point = NodePath("Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="TileMap/Enemy2"]
+position = Vector2(0, 100)
 
 [node name="Player" parent="." instance=ExtResource("1_hks37")]
 texture_filter = 0
