@@ -2827,7 +2827,8 @@ texture = ExtResource("3_myqq6")
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.375, -3.875, 6.25, -4, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ngopv"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Sand 0"
 terrain_set_0/terrain_0/color = Color(0.552941, 0.00392157, 0.792157, 1)
@@ -2866,6 +2867,9 @@ layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
 
+[node name="Enemy" parent="TileMap" instance=ExtResource("6_8ikdd")]
+position = Vector2(104, 72)
+
 [node name="Player" parent="." instance=ExtResource("1_hks37")]
 texture_filter = 0
 position = Vector2(46, 38)
@@ -2877,6 +2881,3 @@ limit_right = 450
 limit_bottom = 350
 script = ExtResource("5_sllot")
 tilemap = NodePath("../../TileMap")
-
-[node name="Enemy" parent="." instance=ExtResource("6_8ikdd")]
-position = Vector2(104, 72)

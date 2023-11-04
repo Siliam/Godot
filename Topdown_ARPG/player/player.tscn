@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c525e7mbhcrm7"]
+[gd_scene load_steps=11 format=3 uid="uid://c525e7mbhcrm7"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_5arul"]
 [ext_resource type="Texture2D" uid="uid://c8ohmbh4uvymw" path="res://Assets/character_sheet.png" id="1_y3ike"]
@@ -102,8 +102,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krfef"]
 size = Vector2(12, 5)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t4lf7"]
+radius = 6.0
+height = 14.0
+
 [node name="Player" type="CharacterBody2D"]
-y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_5arul")
 
@@ -123,3 +126,11 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_krfef")
+
+[node name="Hitbox" type="Area2D" parent="."]
+y_sort_enabled = true
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -7)
+shape = SubResource("CapsuleShape2D_t4lf7")

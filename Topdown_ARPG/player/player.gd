@@ -21,6 +21,8 @@ func update_animation():
 			direction = "up"
 		animations.play("walk_"+direction)
 
+
+
 func _physics_process(delta):
 	handle_input()
 	update_animation()
