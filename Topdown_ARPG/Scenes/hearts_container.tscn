@@ -1,16 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://sl4lcj34liw8"]
 
-[ext_resource type="PackedScene" uid="uid://dhq7xt6y2m8h5" path="res://Scenes/heart.tscn" id="1_ibxiv"]
+[ext_resource type="Script" path="res://Scenes/hearts_container.gd" id="1_sqpbe"]
 
 [node name="HeartsContainer" type="HBoxContainer"]
 offset_right = 40.0
 offset_bottom = 40.0
-
-[node name="HeartGui" parent="." instance=ExtResource("1_ibxiv")]
-layout_mode = 2
-
-[node name="HeartGui2" parent="." instance=ExtResource("1_ibxiv")]
-layout_mode = 2
-
-[node name="HeartGui3" parent="." instance=ExtResource("1_ibxiv")]
-layout_mode = 2
+script = ExtResource("1_sqpbe")

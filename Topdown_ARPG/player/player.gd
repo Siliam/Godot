@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal health_changed
+
 @export var speed = 50
 @onready var animations = $AnimationPlayer
 
@@ -40,4 +42,5 @@ func _on_hitbox_area_entered(area):
 		if current_health == 0:
 			current_health = max_health
 		
+		health_changed.emit(current_health)
 		print(current_health)
