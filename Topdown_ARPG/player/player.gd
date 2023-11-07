@@ -4,6 +4,7 @@ signal health_changed
 
 @export var speed = 50
 @onready var animations = $AnimationPlayer
+@export var knockback_force = 500
 
 @export var max_health: int = 3
 @onready var current_health: int = 3
@@ -44,3 +45,9 @@ func _on_hitbox_area_entered(area):
 		
 		health_changed.emit(current_health)
 		print(current_health)
+		knockback(area.get_parent().velocity)
+
+func knockback(enemy_velocity):
+	var knockback_direction = -( velocity - enemy_velocity ).normalized() * knockback_force
+	velocity = knockback_direction
+	move_and_slide()
