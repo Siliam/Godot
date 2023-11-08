@@ -4,6 +4,9 @@ signal health_changed
 
 @export var speed = 50
 @onready var animations = $AnimationPlayer
+@onready var effects = $Effects
+@onready var reset_timer = $Timer
+
 @export var knockback_force = 500
 
 @export var max_health: int = 3
@@ -35,7 +38,8 @@ func _physics_process(delta):
 	update_animation()
 	move_and_slide()
 
-
+func _ready():
+	effects.play("RESET")
 func _on_hitbox_area_entered(area):
 	if area.name == "Hitbox":
 		current_health -= 1
@@ -46,7 +50,10 @@ func _on_hitbox_area_entered(area):
 		health_changed.emit(current_health)
 		print(current_health)
 		knockback(area.get_parent().velocity)
-
+		effects.play("blink_hurt")
+		reset_timer.start()
+		await reset_timer.timout
+		
 func knockback(enemy_velocity):
 	var knockback_direction = -( velocity - enemy_velocity ).normalized() * knockback_force
 	velocity = knockback_direction
