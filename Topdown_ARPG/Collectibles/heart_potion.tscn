@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh7v4nosf5t5s"]
+
+[ext_resource type="PackedScene" uid="uid://bd0kmara81v6q" path="res://Collectibles/collectible.tscn" id="1_bgdsn"]
+[ext_resource type="Texture2D" uid="uid://ccekifnrhntot" path="res://Assets/LifePot.png" id="2_06br4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awcpm"]
+resource_local_to_scene = true
+size = Vector2(10, 12)
+
+[node name="HeartPotion" instance=ExtResource("1_bgdsn")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("RectangleShape2D_awcpm")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_06br4")

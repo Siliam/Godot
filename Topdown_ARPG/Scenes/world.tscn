@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmycbwy02njls"]
+[gd_scene load_steps=16 format=3 uid="uid://cmycbwy02njls"]
 
 [ext_resource type="PackedScene" uid="uid://c525e7mbhcrm7" path="res://player/player.tscn" id="1_hks37"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_k5c44"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cnr41b6741vbo" path="res://Assets/SpriteSheet16x16.png" id="3_myqq6"]
 [ext_resource type="Texture2D" uid="uid://tb0fagow3avv" path="res://Assets/TilesetNature.png" id="3_pfgvs"]
 [ext_resource type="Script" path="res://Scenes/FollowCam.gd" id="5_sllot"]
+[ext_resource type="PackedScene" uid="uid://dh7v4nosf5t5s" path="res://Collectibles/heart_potion.tscn" id="5_vh5p6"]
 [ext_resource type="PackedScene" uid="uid://fmxmamxb3nmx" path="res://Enemies/enemy.tscn" id="6_8ikdd"]
+[ext_resource type="PackedScene" uid="uid://v7ch007vte28" path="res://Collectibles/wand.tscn" id="6_ydv5r"]
 [ext_resource type="PackedScene" uid="uid://sl4lcj34liw8" path="res://Scenes/hearts_container.tscn" id="7_r8rfw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ce0p0"]
@@ -2828,15 +2830,22 @@ texture = ExtResource("3_myqq6")
 0:0/0/physics_layer_0/angular_velocity = 0.0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.375, -3.875, 6.25, -4, 8, 8, -8, 8)
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_r1ykw"]
+resource_name = "Collectibles"
+scenes/3/scene = ExtResource("5_vh5p6")
+scenes/4/scene = ExtResource("6_ydv5r")
+
 [sub_resource type="TileSet" id="TileSet_ngopv"]
 physics_layer_0/collision_layer = 3
 physics_layer_0/collision_mask = 3
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Sand 0"
 terrain_set_0/terrain_0/color = Color(0.552941, 0.00392157, 0.792157, 1)
+terrain_set_1/mode = 0
 sources/0 = SubResource("TileSetAtlasSource_ce0p0")
 sources/1 = SubResource("TileSetAtlasSource_7bfyb")
 sources/2 = SubResource("TileSetAtlasSource_fpp1k")
+sources/3 = SubResource("TileSetScenesCollectionSource_r1ykw")
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -2844,6 +2853,7 @@ script = ExtResource("1_k5c44")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
+position = Vector2(1, 2)
 tile_set = SubResource("TileSet_ngopv")
 format = 2
 layer_0/name = "ground"
@@ -2869,6 +2879,13 @@ layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
 layer_3/tile_data = PackedInt32Array()
+layer_4/name = "Collectibles"
+layer_4/enabled = true
+layer_4/modulate = Color(1, 1, 1, 1)
+layer_4/y_sort_enabled = false
+layer_4/y_sort_origin = 0
+layer_4/z_index = 0
+layer_4/tile_data = PackedInt32Array(458770, 3, 262144, 655364, 3, 262144, 524314, 3, 262144, 851979, 3, 262144, 196612, 3, 196608, 786434, 3, 196608, 131085, 3, 196608, 589837, 3, 196608, 262146, 3, 262144)
 
 [node name="Enemy" parent="TileMap" node_paths=PackedStringArray("end_point") instance=ExtResource("6_8ikdd")]
 position = Vector2(104, 72)
