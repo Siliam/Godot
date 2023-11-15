@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c525e7mbhcrm7"]
+[gd_scene load_steps=15 format=3 uid="uid://c525e7mbhcrm7"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_5arul"]
 [ext_resource type="Texture2D" uid="uid://c8ohmbh4uvymw" path="res://Assets/character_sheet.png" id="1_y3ike"]
+[ext_resource type="Resource" uid="uid://csmkql4fwjq4m" path="res://Inventory/inventory.tres" id="2_sot4d"]
 
 [sub_resource type="Animation" id="Animation_gy2wk"]
 length = 0.001
@@ -148,6 +149,7 @@ _data = {
 [node name="Player" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_5arul")
+inventory = ExtResource("2_sot4d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 clip_children = 2

@@ -9,6 +9,8 @@ signal health_changed
 @onready var hurt_box = $Hitbox
 @export var knockback_force = 500
 
+@export var inventory: Inventory
+
 @export var max_health: int = 3
 @onready var current_health: int = 3
 
