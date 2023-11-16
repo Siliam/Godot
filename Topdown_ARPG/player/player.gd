@@ -66,7 +66,7 @@ func hurt_by_enemy(area):
 
 func _on_hitbox_area_entered(area):
 	if area.has_method("collect"):
-		area.collect()
+		area.collect(inventory)
 
 func _on_hitbox_area_exited(area):
 	pass

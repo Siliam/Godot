@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://v7ch007vte28"]
+[gd_scene load_steps=9 format=3 uid="uid://v7ch007vte28"]
 
 [ext_resource type="PackedScene" uid="uid://bd0kmara81v6q" path="res://Collectibles/collectible.tscn" id="1_fjtyf"]
 [ext_resource type="Texture2D" uid="uid://c8hq6g1qx4gnp" path="res://Assets/Sprite.png" id="2_fv7br"]
 [ext_resource type="Script" path="res://Collectibles/wand.gd" id="2_qxccs"]
+[ext_resource type="Resource" uid="uid://mdhsgqup8xqp" path="res://Inventory/items/wand.tres" id="3_jrv7v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b6g57"]
 resource_local_to_scene = true
@@ -48,6 +49,7 @@ _data = {
 
 [node name="Wand" instance=ExtResource("1_fjtyf")]
 script = ExtResource("2_qxccs")
+item_resource = ExtResource("3_jrv7v")
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_b6g57")
