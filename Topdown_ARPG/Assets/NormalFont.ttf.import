@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://jdmfu6f04cex"
-path="res://.godot/imported/NormalFont.ttf-be3f0bf329c478615d7bbed541254bba.fontdata"
+path="res://.godot/imported/NormalFont.ttf-f78a446509dbd1cac9ae2e6a3966983c.fontdata"
 
 [deps]
 
-source_file="res://NinjaAdventure_pack/HUD/Font/NormalFont.ttf"
-dest_files=["res://.godot/imported/NormalFont.ttf-be3f0bf329c478615d7bbed541254bba.fontdata"]
+source_file="res://Assets/NormalFont.ttf"
+dest_files=["res://.godot/imported/NormalFont.ttf-f78a446509dbd1cac9ae2e6a3966983c.fontdata"]
 
 [params]
 
