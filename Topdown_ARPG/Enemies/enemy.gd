@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 var start_position
 var end_position
+var is_dead = false
 
 func _ready():
 	start_position = position
@@ -41,6 +42,20 @@ func update_animation():
 		animations.play("walk_"+direction)
 
 func _physics_process(delta):
+	if is_dead: return
 	update_velocity()
 	move_and_slide()
 	update_animation()
+
+
+func _on_hurtbox_area_entered(area):
+	if area == $Hitbox:
+		return
+	$Hitbox.set_deferred("monitorable", false)
+	print('play death animation')
+	is_dead = true
+	animations.play("Death_2")
+	await animations.animation_finished
+	print('animation played')
+
+	queue_free()

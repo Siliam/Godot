@@ -28,12 +28,12 @@ func handle_input():
 		attack()
 
 func attack():
-	weapon.visible = true
+	weapon.enable()
 	animations.play("attack_"+last_animation_direction)
 	is_attacking = true
 	await animations.animation_finished
 	is_attacking = false
-	weapon.visible = false
+	weapon.disable()
 
 func update_animation():
 	if is_attacking:

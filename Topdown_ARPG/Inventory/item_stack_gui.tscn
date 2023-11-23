@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfjd38j1xbnfb"]
+
+[ext_resource type="FontFile" uid="uid://jdmfu6f04cex" path="res://Assets/NormalFont.ttf" id="1_dugsb"]
+[ext_resource type="Script" path="res://Inventory/item_stack_gui.gd" id="1_ipju2"]
+
+[node name="Panel" type="Panel"]
+script = ExtResource("1_ipju2")
+
+[node name="item" type="Sprite2D" parent="."]
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(11, 14)
+layout_mode = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 9.0
+offset_bottom = 12.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.12549, 0.0470588, 0, 1)
+theme_override_fonts/font = ExtResource("1_dugsb")
+theme_override_font_sizes/font_size = 8
+text = "x10"
+horizontal_alignment = 2

@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://jewjpj6ya6fo"]
+[gd_scene load_steps=4 format=3 uid="uid://uku3l4ad0tle"]
 
 [ext_resource type="Texture2D" uid="uid://cwpra2u62kqt3" path="res://NinjaAdventure_pack/Items/Weapons/MagicWand/Sprite.png" id="1_5bdlk"]
+[ext_resource type="Script" path="res://Assets/wand.gd" id="1_usl23"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d55d1"]
 size = Vector2(4, 15)
 
 [node name="Wand" type="Area2D"]
+collision_layer = 4
+script = ExtResource("1_usl23")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
