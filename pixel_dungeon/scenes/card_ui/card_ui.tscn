@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjs1k26lg6k2m"]
+[gd_scene load_steps=10 format=3 uid="uid://bjs1k26lg6k2m"]
 
 [ext_resource type="Theme" uid="uid://cffc4km4oadde" path="res://main_theme.tres" id="1_ascp2"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_ui.gd" id="1_wjn6r"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_state_machine.gd" id="3_0aysy"]
 [ext_resource type="Script" path="res://scenes/card_ui/card_states/card_base_state.gd" id="4_cvci0"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_clicked_state.gd" id="5_qynp8"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_dragging_state.gd" id="6_8nhgh"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_released_state.gd" id="7_r8qar"]
+[ext_resource type="Script" path="res://scenes/card_ui/card_states/card_aiming_state.gd" id="8_5ceow"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b15ds"]
 size = Vector2(25, 31)
@@ -27,6 +31,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0.431373, 0.431373, 1)
 
 [node name="State" type="Label" parent="."]
@@ -49,14 +54,31 @@ monitorable = false
 position = Vector2(12.5, 15.5)
 shape = SubResource("RectangleShape2D_b15ds")
 
-[node name="CardStateMachine" type="Node" parent="."]
+[node name="CardStateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_0aysy")
+initial_state = NodePath("CardBaseState")
 
 [node name="CardBaseState" type="Node" parent="CardStateMachine"]
 script = ExtResource("4_cvci0")
 
 [node name="CardClickedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("5_qynp8")
+state = 1
 
 [node name="CardDraggingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("6_8nhgh")
+state = 2
 
-[node name="CradReleasedState" type="Node" parent="CardStateMachine"]
+[node name="CardReleasedState" type="Node" parent="CardStateMachine"]
+script = ExtResource("7_r8qar")
+state = 4
+
+[node name="CardAimingState" type="Node" parent="CardStateMachine"]
+script = ExtResource("8_5ceow")
+state = 3
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="area_entered" from="DropPointDetector" to="." method="_on_drop_point_detector_area_entered"]
+[connection signal="area_exited" from="DropPointDetector" to="." method="_on_drop_point_detector_area_exited"]
