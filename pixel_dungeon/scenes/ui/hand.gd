@@ -9,4 +9,3 @@ func _ready() -> void:
 
 func _on_card_ui_reparent_requested(child: CardUI) -> void:
 	child.reparent(self)
-	print(child, ' reparnted to ', self)

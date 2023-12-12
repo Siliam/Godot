@@ -23,7 +23,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="CardDropArea" type="Area2D" parent="."]
-light_mask = 2
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
 position = Vector2(128, 50)

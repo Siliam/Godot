@@ -23,6 +23,7 @@ func on_input(event: InputEvent) -> void:
 	
 	if single_targeted and mouse_motion and card_ui.targets.size() > 0:
 		transition_requested.emit(self, CardState.State.AIMING)
+		print("Request transition to AIMING")
 		return
 	
 	if mouse_motion:
