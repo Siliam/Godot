@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ditbfscvbbgbj"]
+[gd_scene load_steps=12 format=3 uid="uid://ditbfscvbbgbj"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_jik3t"]
 [ext_resource type="PackedScene" uid="uid://bjs1k26lg6k2m" path="res://scenes/card_ui/card_ui.tscn" id="2_b2ha8"]
@@ -6,7 +6,9 @@
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_kgngg"]
 [ext_resource type="PackedScene" uid="uid://1oaohut4iuvn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_fe5xj"]
 [ext_resource type="Resource" uid="uid://0cdh10ylsgkq" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="4_bs4d1"]
+[ext_resource type="PackedScene" uid="uid://u2lw5j7yrv1i" path="res://scenes/player/player.tscn" id="4_n3o6t"]
 [ext_resource type="Resource" uid="uid://bdcfddv8bjf68" path="res://characters/warrior/cards/warrior_block.tres" id="5_7d2tf"]
+[ext_resource type="Resource" uid="uid://cdtl5ylpxledp" path="res://characters/warrior/warrior.tres" id="5_kjivu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhnwa"]
 size = Vector2(256, 100)
@@ -41,6 +43,10 @@ texture = ExtResource("2_c312f")
 shape = SubResource("RectangleShape2D_k6ax8")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_fe5xj")]
+
+[node name="Player" parent="." instance=ExtResource("4_n3o6t")]
+position = Vector2(53, 74)
+stats = ExtResource("5_kjivu")
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["ui_layer"]]
 
