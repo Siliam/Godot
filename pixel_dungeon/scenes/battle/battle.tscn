@@ -2,9 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_jik3t"]
 [ext_resource type="PackedScene" uid="uid://bjs1k26lg6k2m" path="res://scenes/card_ui/card_ui.tscn" id="2_b2ha8"]
-[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://art/tile_0110.png" id="2_c312f"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_kgngg"]
+[ext_resource type="PackedScene" uid="uid://dpr8vuklyc16b" path="res://enemy/enemy.tscn" id="2_mbsd0"]
 [ext_resource type="PackedScene" uid="uid://1oaohut4iuvn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_fe5xj"]
+[ext_resource type="Resource" uid="uid://df4rkrjq15d11" path="res://enemies/crab/test_enemy.tres" id="3_t2haq"]
 [ext_resource type="Resource" uid="uid://0cdh10ylsgkq" path="res://characters/warrior/cards/warrior_axe_attack.tres" id="4_bs4d1"]
 [ext_resource type="PackedScene" uid="uid://u2lw5j7yrv1i" path="res://scenes/player/player.tscn" id="4_n3o6t"]
 [ext_resource type="Resource" uid="uid://bdcfddv8bjf68" path="res://characters/warrior/cards/warrior_block.tres" id="5_7d2tf"]
@@ -12,8 +13,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhnwa"]
 size = Vector2(256, 100)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6ax8"]
 
 [node name="Battle" type="Node2D"]
 metadata/_edit_lock_ = true
@@ -32,15 +31,9 @@ position = Vector2(128, 50)
 shape = SubResource("RectangleShape2D_vhnwa")
 debug_color = Color(0, 0.6, 0.701961, 0.192157)
 
-[node name="Enemy" type="Area2D" parent="."]
-position = Vector2(206, 77)
-collision_layer = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("2_c312f")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource("RectangleShape2D_k6ax8")
+[node name="Enemy" parent="." instance=ExtResource("2_mbsd0")]
+position = Vector2(209, 78)
+stats = ExtResource("3_t2haq")
 
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_fe5xj")]
 
