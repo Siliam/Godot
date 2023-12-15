@@ -27,7 +27,7 @@ func take_damage(damage: int) -> void:
 	self.health -= damage
 
 func heal(amount: int) -> void:
-	self.health += health
+	self.health += amount
 
 func create_instance() -> Resource:
 	var instance: Stats = self.duplicate()
