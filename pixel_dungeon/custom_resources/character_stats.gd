@@ -29,3 +29,6 @@ func create_instance() -> Resource:
 	instance.draw_pile = CardPile.new()
 	instance.discard = CardPile.new()
 	return instance
+
+func _to_string() -> String:
+	return "Health %s, Block %s" % [health, block]
