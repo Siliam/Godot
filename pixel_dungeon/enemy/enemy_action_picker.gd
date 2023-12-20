@@ -34,8 +34,6 @@ func get_chance_based_action() -> EnemyAction:
 	var action: EnemyAction
 	var roll := randf_range(0.0, total_weight)
 
-	print('Getting chance based action', roll)
-	
 	for child in get_children():
 		action = child as EnemyAction
 		if not action or action.type != EnemyAction.Type.CHANCE_BASED:

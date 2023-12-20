@@ -49,7 +49,6 @@ func _on_card_aim_started(card: CardUI) -> void:
 	current_card = card
 	
 func _on_card_aim_ended(_card: CardUI) -> void:
-	print("Entering _on_card_aim_ended")
 	targeting = false
 	card_arc.clear_points()
 	area_2d.position = Vector2.ZERO
