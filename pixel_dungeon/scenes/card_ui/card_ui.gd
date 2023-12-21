@@ -16,8 +16,8 @@ const DRAG_STYLEBOX := preload("res://scenes/card_ui/card_dragging_stylebox.tres
 @onready var panel = $Panel
 @onready var cost = $Cost
 @onready var icon = $Icon
-@onready var original_index := self.get_index()
 
+var original_index := 0
 var parent: Control
 var tween: Tween
 var playable := true : set = _set_playable

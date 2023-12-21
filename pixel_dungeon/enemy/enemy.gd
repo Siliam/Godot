@@ -2,19 +2,23 @@ extends Area2D
 class_name Enemy
 
 const ARROW_OFFSET := 5
+const WHITE_SPRITE_MATERIAL := preload("res://art/white_sprite_material.tres")
 
 @export var stats: EnemyStats : set = set_enemy_stats
 
 @onready var sprite_2d = $Sprite2D
 @onready var arrow = $Arrow
 @onready var stats_ui = $StatsUI
+@onready var intent_ui = $IntentUI
+
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction : set = set_current_action
 
 func set_current_action(value: EnemyAction) -> void:
 	current_action = value
-
+	if current_action:
+		intent_ui.update_intent(current_action.intent)
 
 func set_enemy_stats(value: EnemyStats) -> void:
 	stats = value.create_instance()
@@ -78,12 +82,19 @@ func do_turn() -> void:
 func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
-		
-	stats.take_damage(damage)
-
-	if stats.health <= 0:
-		queue_free()
-
+	
+	sprite_2d.material = WHITE_SPRITE_MATERIAL
+	
+	var tween := create_tween()
+	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_interval(0.17)
+	tween.finished.connect(
+		func(): 
+			sprite_2d.material = null
+			if stats.health <= 0:
+				queue_free()
+	)
 
 func _on_area_entered(_area):
 	arrow.show()

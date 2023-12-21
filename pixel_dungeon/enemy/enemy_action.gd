@@ -3,6 +3,7 @@ class_name EnemyAction
 
 enum Type {CONDITIONAL, CHANCE_BASED}
 
+@export var intent: Intent
 @export var type: Type
 @export_range(0.0, 10.0) var action_weight := 0.0
 
