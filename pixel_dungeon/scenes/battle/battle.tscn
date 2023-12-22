@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://ditbfscvbbgbj"]
+[gd_scene load_steps=18 format=3 uid="uid://ditbfscvbbgbj"]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1_2nwra"]
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://art/background.png" id="1_jik3t"]
 [ext_resource type="Script" path="res://scenes/ui/hand.gd" id="2_kgngg"]
 [ext_resource type="PackedScene" uid="uid://dpr8vuklyc16b" path="res://enemy/enemy.tscn" id="2_mbsd0"]
 [ext_resource type="PackedScene" uid="uid://1oaohut4iuvn" path="res://scenes/card_target_selector/card_target_selector.tscn" id="3_fe5xj"]
+[ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://art/8_bit_iced_village_lofi.mp3" id="3_xnlfn"]
 [ext_resource type="Script" path="res://enemy/enemy_handler.gd" id="4_e3m71"]
 [ext_resource type="PackedScene" uid="uid://u2lw5j7yrv1i" path="res://scenes/player/player.tscn" id="4_n3o6t"]
 [ext_resource type="Resource" uid="uid://cdtl5ylpxledp" path="res://characters/warrior/warrior.tres" id="5_kjivu"]
@@ -22,6 +23,7 @@ size = Vector2(256, 100)
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_2nwra")
 char_stats = ExtResource("5_kjivu")
+music = ExtResource("3_xnlfn")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="Sprite2D" parent="."]
