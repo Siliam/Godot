@@ -1,9 +1,9 @@
 extends EnemyAction
 
-@export var block := 6
+@export var block := 4
 
-func perform_action() -> void:
-	if not enemy:
+func perform_action():
+	if not enemy or not target:
 		return
 	
 	var block_effect := BlockEffect.new()

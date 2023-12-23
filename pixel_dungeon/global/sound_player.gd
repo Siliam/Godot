@@ -1,6 +1,6 @@
 extends Node
 
-func play(audio, AudioStream, single=false):
+func play(audio: AudioStream, single=false):
 	if not audio:
 		return
 	

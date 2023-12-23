@@ -38,8 +38,8 @@ func set_card(value: Card) -> void:
 		await ready
 	
 	card = value
-	cost.text = str(card.cost)
-	icon.texture = card.icon
+	self.cost.text = str(card.cost)
+	self.icon.texture = card.icon
 
 func play() -> void:
 	if not card:

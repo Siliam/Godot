@@ -8,7 +8,7 @@ enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 @export var id: String
 @export var type: Type
 @export var target: Target
-
+@export var sound: AudioStream
 @export var cost: int
 
 @export_group("Card visuals")
