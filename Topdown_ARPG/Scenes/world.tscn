@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmycbwy02njls"]
+[gd_scene load_steps=19 format=3 uid="uid://cmycbwy02njls"]
 
 [ext_resource type="PackedScene" uid="uid://c525e7mbhcrm7" path="res://player/player.tscn" id="1_hks37"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_k5c44"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://sl4lcj34liw8" path="res://Scenes/hearts_container.tscn" id="7_r8rfw"]
 [ext_resource type="Script" path="res://Scenes/CanvasLayer.gd" id="10_nvgxu"]
 [ext_resource type="PackedScene" uid="uid://68jv8qi2twye" path="res://Scenes/inventory_gui.tscn" id="10_v7ear"]
+[ext_resource type="Script" path="res://Scenes/ProgressBar.gd" id="13_nqiy5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ce0p0"]
 texture = ExtResource("2_ysne8")
@@ -2934,7 +2935,21 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("7_r8rfw")]
+visible = false
 offset_right = 56.0
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 33.0
+offset_top = 8.0
+offset_right = 97.0
+offset_bottom = 22.0
+grow_horizontal = 2
+value = 100.0
+script = ExtResource("13_nqiy5")
+player = NodePath("../../Player")
 
 [connection signal="closed" from="CanvasLayer/InventoryGui" to="CanvasLayer" method="_on_inventory_gui_closed"]
 [connection signal="opened" from="CanvasLayer/InventoryGui" to="CanvasLayer" method="_on_inventory_gui_opened"]
