@@ -2935,10 +2935,10 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HeartsContainer" parent="CanvasLayer" instance=ExtResource("7_r8rfw")]
-visible = false
 offset_right = 56.0
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

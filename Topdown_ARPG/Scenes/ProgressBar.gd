@@ -7,5 +7,6 @@ func _ready():
 	player.health_changed.connect(update)
 	
 func update():
-	value = player.current_health * 100 / player.max_health
-	print("New value", value)
+	if player:
+		value = player.current_health * 100 / player.max_health
+		print("New value", value)

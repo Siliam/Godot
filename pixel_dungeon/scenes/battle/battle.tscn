@@ -60,7 +60,7 @@ stats = ExtResource("8_1gldr")
 [node name="CardTargetSelector" parent="." instance=ExtResource("3_fe5xj")]
 
 [node name="Player" parent="." instance=ExtResource("4_n3o6t")]
-position = Vector2(53, 74)
+position = Vector2(101, 75)
 stats = ExtResource("5_kjivu")
 
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("hand")]
