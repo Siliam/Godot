@@ -126,3 +126,7 @@ position = Vector2(222, 106)
 scale = Vector2(2, 2)
 texture = ExtResource("8_w0atr")
 flip_h = true
+
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/NewRun" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
