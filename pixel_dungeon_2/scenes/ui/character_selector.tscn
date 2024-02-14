@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dkktge2v6x2i3"]
 
-[ext_resource type="Script" path="res://scenes/ui/main_menu.gd" id="1_y2005"]
+[ext_resource type="Script" path="res://scenes/ui/character_selector.gd" id="1_iaoie"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="2_p14cc"]
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="4_qqvgu"]
 [ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://art/tile_0130.png" id="5_xmpeg"]
@@ -35,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_y2005")
+script = ExtResource("1_iaoie")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -171,3 +171,7 @@ grow_vertical = 2
 texture = ExtResource("6_y2iuw")
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/WarriorButton" to="." method="_on_warrior_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/WizardButton" to="." method="_on_wizard_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/AssassinButton" to="." method="_on_assassin_button_pressed"]
