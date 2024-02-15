@@ -172,6 +172,7 @@ texture = ExtResource("6_y2iuw")
 expand_mode = 1
 stretch_mode = 5
 
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/WarriorButton" to="." method="_on_warrior_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/WizardButton" to="." method="_on_wizard_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/AssassinButton" to="." method="_on_assassin_button_pressed"]

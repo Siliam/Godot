@@ -7,7 +7,8 @@
 [resource]
 script = ExtResource("1_xcxma")
 character_name = "Wizard"
-description = "Years of Wisdom and recurring back pain"
+description = "Years of Wisdom 
+and recurring back pain"
 portrait = ExtResource("1_ysjgl")
 starting_deck = ExtResource("3_y1h7s")
 cards_per_turn = 3
