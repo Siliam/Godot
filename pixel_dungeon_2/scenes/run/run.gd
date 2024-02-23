@@ -8,6 +8,8 @@ const MAP_SCENE := preload("res://scenes/map/map.tscn")
 const SHOP_SCENE := preload("res://scenes/shop/shop.tscn")
 const TREASURE_SCENE := preload("res://scenes/treasure/treasure.tscn")
 
+@export var run_startup: RunStartup
+
 @onready var current_view = %CurrentView
 @onready var battle_button = %BattleButton
 @onready var map_button = %MapButton
@@ -21,11 +23,15 @@ var character: CharacterStats
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if not character:
-		var warrior := load("res://characters/warrior/warrior.tres")
-		character = warrior.create_instance()
-		_start_run()
-
+	if not run_startup:
+		return
+		
+	match run_startup.type:
+		RunStartup.Type.NEW_RUN:
+			character = run_startup.picked_character.create_instance()
+			_start_run()
+		RunStartup.Type.CONTINUED_RUN:
+			print("TODO: Load previous run")
 
 func _start_run() -> void:
 	_setup_event_connections()
@@ -55,8 +61,8 @@ func _setup_event_connections():
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_SCENE))
 	
 func _on_map_exited():
-	pass #change the view 
+	print('from the map, change view based on room')
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	pass

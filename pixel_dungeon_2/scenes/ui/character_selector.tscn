@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://dkktge2v6x2i3"]
+[gd_scene load_steps=13 format=3 uid="uid://dkktge2v6x2i3"]
 
 [ext_resource type="Script" path="res://scenes/ui/character_selector.gd" id="1_iaoie"]
+[ext_resource type="Resource" uid="uid://dfdu1m50bp32x" path="res://scenes/run/run_startup.tres" id="2_5sq5c"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://art/pixel_rpg.ttf" id="2_p14cc"]
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://art/tile_0118.png" id="4_qqvgu"]
 [ext_resource type="Texture2D" uid="uid://pgj8vfpj6tc5" path="res://art/tile_0130.png" id="5_xmpeg"]
@@ -36,6 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_iaoie")
+run_startup = ExtResource("2_5sq5c")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
