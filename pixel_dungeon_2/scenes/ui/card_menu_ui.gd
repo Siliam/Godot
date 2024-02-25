@@ -13,17 +13,20 @@ const HOVER_STYLEBOX := preload("res://scenes/card_ui/card_hover_stylebox.tres")
 @onready var icon = $Visuals/Icon
 
 
-func set_card(c: Card):
-	pass
+func set_card(value: Card):
+	if not is_node_ready():
+		await ready
 	
+	card = value
+	cost.text = str(card.cost)
+	icon.texture = card.icon
 
 func _on_visuals_mouse_entered():
-	pass # Replace with function body.
-
+	panel.set("theme_override_styles/panel", HOVER_STYLEBOX)
 
 func _on_visuals_mouse_exited():
-	pass # Replace with function body.
-
+	panel.set("theme_override_styles/panel", BASE_STYLEBOX)
 
 func _on_visuals_gui_input(event):
-	pass # Replace with function body.
+	if event.is_action_pressed("left"):
+		tooltip_requested.emit(card)
