@@ -1,5 +1,8 @@
-[gd_scene format=3 uid="uid://b757xlp052c6q"]
+[gd_scene load_steps=2 format=3 uid="uid://b757xlp052c6q"]
+
+[ext_resource type="PackedScene" uid="uid://bc2ekuh0ml24e" path="res://slime.blend" id="1_2ck1q"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+[node name="slime" parent="." instance=ExtResource("1_2ck1q")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 0, 0)
