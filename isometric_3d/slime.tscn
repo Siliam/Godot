@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu4t3u7lawosh"]
+
+[ext_resource type="PackedScene" uid="uid://bc2ekuh0ml24e" path="res://slime.blend" id="1_h5y0w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j6qbc"]
+specular_mode = 1
+albedo_color = Color(0.0745098, 0.345098, 0.360784, 1)
+roughness = 0.35
+
+[node name="slime" instance=ExtResource("1_h5y0w")]
+
+[node name="layer1_mesh_" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j6qbc")
+
+[node name="Light" parent="." index="1"]
+omni_range = 6.694

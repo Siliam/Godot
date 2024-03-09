@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://4qg3uxy7rfh"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_n58xa"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.535248, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("CapsuleMesh_n58xa")
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -0.5)
+size = Vector3(19, 1, 18)
