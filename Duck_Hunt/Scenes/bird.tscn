@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctg7nd6sjjdwf"]
+[gd_scene load_steps=4 format=3 uid="uid://ctg7nd6sjjdwf"]
 
+[ext_resource type="Script" path="res://Scenes/bird.gd" id="1_8i34x"]
 [ext_resource type="Texture2D" uid="uid://ct4ahl2b6krf1" path="res://Assets/13056.png" id="1_rhry6"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hm8xa"]
+
+[node name="Bird" type="CharacterBody2D"]
+script = ExtResource("1_8i34x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_rhry6")
 hframes = 9
 vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -6)
+shape = SubResource("CircleShape2D_hm8xa")
