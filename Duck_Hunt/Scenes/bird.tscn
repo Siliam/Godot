@@ -1,17 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctg7nd6sjjdwf"]
+[gd_scene load_steps=8 format=3 uid="uid://ctg7nd6sjjdwf"]
 
 [ext_resource type="Script" path="res://Scenes/bird.gd" id="1_8i34x"]
 [ext_resource type="Texture2D" uid="uid://ct4ahl2b6krf1" path="res://Assets/13056.png" id="1_rhry6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyr3b"]
+atlas = ExtResource("1_rhry6")
+region = Rect2(0, 0, 35, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6se5"]
+atlas = ExtResource("1_rhry6")
+region = Rect2(35, 0, 35, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khxyl"]
+atlas = ExtResource("1_rhry6")
+region = Rect2(70, 0, 35, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_aol5t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyr3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6se5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khxyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hm8xa"]
 
 [node name="Bird" type="CharacterBody2D"]
 script = ExtResource("1_8i34x")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_rhry6")
-hframes = 9
-vframes = 4
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_aol5t")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -6)

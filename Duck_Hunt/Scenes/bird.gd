@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed := 100
 const MAX_DISTANCE = 100
 
-@onready var sprite_2d = $Sprite2D
+@onready var sprite_2d = $AnimatedSprite2D
 
 
 func pick_next_position():
