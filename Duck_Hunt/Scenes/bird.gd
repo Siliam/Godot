@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var target := Vector2i.ZERO
-@export var speed := 100
+@export var speed := 200
 const MAX_DISTANCE = 100
 
 @onready var sprite_2d = $AnimatedSprite2D

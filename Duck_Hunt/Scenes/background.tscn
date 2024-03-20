@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://ckuvrpcaxqmwq"]
+[gd_scene load_steps=7 format=3 uid="uid://ckuvrpcaxqmwq"]
 
+[ext_resource type="Script" path="res://Scenes/background.gd" id="1_0ngft"]
 [ext_resource type="Texture2D" uid="uid://cgot8bobl6bye" path="res://Assets/62618.png" id="1_ptmsu"]
 [ext_resource type="Texture2D" uid="uid://bohrr863m05qx" path="res://Assets/crosshair_0.png" id="2_gyf8k"]
 [ext_resource type="PackedScene" uid="uid://ctg7nd6sjjdwf" path="res://Scenes/bird.tscn" id="2_r1gwe"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0ngft")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -23,22 +25,11 @@ offset_right = 256.0
 offset_bottom = 256.0
 texture = SubResource("AtlasTexture_i4aff")
 
-[node name="Crosshair" type="TextureRect" parent="Background"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_gyf8k")
-script = ExtResource("3_vj8ti")
-
 [node name="Bird" parent="." instance=ExtResource("2_r1gwe")]
 position = Vector2(103, 73)
+
+[node name="Crosshair" type="Node2D" parent="."]
+script = ExtResource("3_vj8ti")
+
+[node name="Sprite2D" type="Sprite2D" parent="Crosshair"]
+texture = ExtResource("2_gyf8k")
