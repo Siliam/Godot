@@ -1,7 +1,9 @@
 extends Node2D
 
 const TIME = 0.2
-const LAG_FACTOR = 0.25
+const LAG_FACTOR = 0.5
+
+var targets = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

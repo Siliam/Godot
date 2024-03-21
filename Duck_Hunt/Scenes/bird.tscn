@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctg7nd6sjjdwf"]
+[gd_scene load_steps=10 format=3 uid="uid://ctg7nd6sjjdwf"]
 
 [ext_resource type="Script" path="res://Scenes/bird.gd" id="1_8i34x"]
 [ext_resource type="Texture2D" uid="uid://ct4ahl2b6krf1" path="res://Assets/13056.png" id="1_rhry6"]
@@ -15,6 +15,14 @@ region = Rect2(35, 0, 35, 42)
 atlas = ExtResource("1_rhry6")
 region = Rect2(70, 0, 35, 42)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8se3"]
+atlas = ExtResource("1_rhry6")
+region = Rect2(260, 0, 26, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tn6x0"]
+atlas = ExtResource("1_rhry6")
+region = Rect2(286, 0, 26, 42)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_aol5t"]
 animations = [{
 "frames": [{
@@ -30,9 +38,21 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8se3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tn6x0")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hm8xa"]
+radius = 24.0208
 
 [node name="Bird" type="CharacterBody2D"]
 script = ExtResource("1_8i34x")
